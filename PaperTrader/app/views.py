@@ -4,7 +4,8 @@ Definition of views.
 
 from datetime import datetime
 from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import render
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpRequest
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
@@ -18,6 +19,7 @@ from django.template.loader import render_to_string
 
 from .forms import RegisterForm
 from .tokens import account_activation_token
+from .forms import ContactForm
 
 
 def home(request):
@@ -112,3 +114,4 @@ def register_form(request):
     else:
         form = RegisterForm()
     return render(request, 'app/register_form.html', {'form': form})
+

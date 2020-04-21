@@ -29,4 +29,4 @@ urlpatterns = [
     path('register_form/', views.register_form, name="register_form"),
     path('sent/', views.activation_sent, name="activation_sent"),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
-]
+    ]

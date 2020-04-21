@@ -5,12 +5,17 @@
 <h2>{{ title }}</h2>
 <h3>{{ message }}</h3>
 
-<address>
-   &nbsp;
-</address>
+
+<form method="post">
+    {% raw %}{% csrf_token %}{% endraw %}
+    {% raw %}{{ form.as_p }}{% endraw %}
+    <div class="form-actions">
+        <button type="submit">Send</button>
+    </div>
+</form>
 
 <address>
-       <strong>Email:</strong> <a href="mailto:akapaw@att.net">akapaw@att.net</a>
+    <strong>Email:</strong> <a href="mailto:akapaw@att.net">akapaw@att.net</a>
 </address>
 
 {% endblock %}
