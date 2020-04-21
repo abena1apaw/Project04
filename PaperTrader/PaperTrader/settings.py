@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     'app',
+    'six',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -111,3 +112,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
