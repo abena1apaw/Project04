@@ -6,6 +6,8 @@
 /PaperTrader/.vscode
 /PaperTrader/PaperTrader.pyproj
 /PaperTrader/PaperTrader.pyproj.user
+/PaperTrader/app/__pycache__
+/PaperTrader/PaperTrader/__pycache__
 
 # testing
 /coverage
