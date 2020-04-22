@@ -2,20 +2,16 @@
 
 {% block content %}
 
-<h2>{{ title }}</h2>
-<h3>{{ message }}</h3>
 
-
+<h2>Contact Us</h2>
 <form method="post">
-    {% raw %}{% csrf_token %}{% endraw %}
-    {% raw %}{{ form.as_p }}{% endraw %}
-    <div class="form-actions">
-        <button type="submit">Send</button>
-    </div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
 </form>
+
 
 <address>
     <strong>Email:</strong> <a href="mailto:akapaw@att.net">akapaw@att.net</a>
 </address>
-
 {% endblock %}

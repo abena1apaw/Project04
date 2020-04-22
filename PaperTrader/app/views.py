@@ -4,7 +4,6 @@ Definition of views.
 
 from datetime import datetime
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpRequest
 from django.contrib.auth import login, authenticate
@@ -16,7 +15,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.template.loader import render_to_string
-
+from django.core.mail import send_mail, BadHeaderError
 from .forms import RegisterForm
 from .tokens import account_activation_token
 from .forms import ContactForm
@@ -57,19 +56,19 @@ def activate(request, uidb64, token):
     else:
         return render(request, 'app/activation_invalid.html')
 
-
-def contact(request):
-    """Renders the contact page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/contact.html',
-        {
-            'title': 'Contact Us',
-            'message': 'Let us know what you think',
-            'year': datetime.now().year,
-        }
-    )
+#
+# def contact(request):
+#     """Renders the contact page."""
+#     assert isinstance(request, HttpRequest)
+#     return render(
+#         request,
+#         'app/contact.html',
+#         {
+#             'title': 'Contact Us',
+#             'message': 'Let us know what you think',
+#             'year': datetime.now().year,
+#         }
+#     )
 
 
 def about(request):
@@ -114,4 +113,22 @@ def register_form(request):
     else:
         form = RegisterForm()
     return render(request, 'app/register_form.html', {'form': form})
+
+
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # send email code goes here
+            sender_name = form.cleaned_data['name']
+            sender_email = form.cleaned_data['email']
+
+            message = "{0} has sent you a new message:\n\n{1}".format(sender_name, form.cleaned_data['message'])
+            send_mail('New Enquiry', message, sender_email, ['enquiry@exampleco.com'])
+
+            return HttpResponse('Thanks for contacting us!')
+    else:
+        form = ContactForm()
+
+    return render(request, 'app/contact.html', {'form': form})
 

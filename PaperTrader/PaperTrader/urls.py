@@ -8,9 +8,10 @@ from django.conf.urls import url
 from django.contrib.auth.views import LoginView, LogoutView
 from app import forms, views
 
+
 urlpatterns = [
     path('', views.home, name='home'),
-    path('contact/', views.contact, name='contact'),
+    path('contact/', views.contact_us, name='contact'),
     path('about/', views.about, name='about'),
     path('login/',
          LoginView.as_view
@@ -29,4 +30,5 @@ urlpatterns = [
     path('register_form/', views.register_form, name="register_form"),
     path('sent/', views.activation_sent, name="activation_sent"),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
-    ]
+    url(r'^contact/', views.contact_us, name="contact"),
+]
