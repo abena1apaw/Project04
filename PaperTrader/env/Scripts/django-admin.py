@@ -1,4 +1,4 @@
-#!C:\Users\justi\Documents\GitHub\Project04\PaperTrader\env\Scripts\python.exe
+#!C:\Users\akapa\OneDrive\MCAT Prep\Documents\GitHub\Project04\PaperTrader\env\Scripts
 from django.core import management
 
 if __name__ == "__main__":

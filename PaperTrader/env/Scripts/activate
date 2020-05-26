@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\justi\Documents\GitHub\Project04\PaperTrader\env"
+VIRTUAL_ENV="C:\Users\akapa\OneDrive\MCAT Prep\Documents\GitHub\Project04\PaperTrader\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
