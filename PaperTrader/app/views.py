@@ -124,7 +124,7 @@ def contact_us(request):
             sender_email = form.cleaned_data['email']
 
             message = "{0} has sent you a new message:\n\n{1}".format(sender_name, form.cleaned_data['message'])
-            send_mail('New Enquiry', message, sender_email, ['enquiry@exampleco.com'])
+            send_mail('New Enquiry', message, sender_email, ['akapaw@att.net'])
 
             return HttpResponse('Thanks for contacting us!')
     else:
