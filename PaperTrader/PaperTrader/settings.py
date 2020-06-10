@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'app',
     'six',
-    'tastypie',
+    # 'tastypie',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
