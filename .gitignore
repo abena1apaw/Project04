@@ -22,3 +22,8 @@
 .env.test.local
 .env.production.local
 
+*.pyc
+*.pyc
+*.pyc
+*.pyc
+*.pyc
