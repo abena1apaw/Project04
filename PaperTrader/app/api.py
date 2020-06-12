@@ -7,7 +7,7 @@ import base64
 from io import BytesIO
 
 fig = plt.figure()
-
+# this code produces the chart for the stock.
 
 pd.core.common.is_list_like = pd.api.types.is_list_like
 
