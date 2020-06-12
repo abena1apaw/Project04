@@ -1,0 +1,3 @@
+As a stockbroker, I want to use the app to view my clients portfolios so that I may advise the client to diversify thier stock portfolios and buy bonds.
+As a trader, I want to use the app to view my portfolio so that I can update my portfolio with new stocks and drop old stocks.
+As a economics student, I want to use the app to view stock prices over the years so that I can predict the future of the a company.
